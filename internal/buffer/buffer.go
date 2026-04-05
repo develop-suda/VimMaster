@@ -60,9 +60,6 @@ func (b *Buffer) ClampCursor() {
 	if b.CursorRow >= len(b.Lines) {
 		b.CursorRow = len(b.Lines) - 1
 	}
-	if b.CursorRow < 0 {
-		b.CursorRow = 0
-	}
 	lineLen := len([]rune(b.CurrentLine()))
 	if lineLen == 0 {
 		b.CursorCol = 0
@@ -83,9 +80,6 @@ func (b *Buffer) ClampCursorInsert() {
 	}
 	if b.CursorRow >= len(b.Lines) {
 		b.CursorRow = len(b.Lines) - 1
-	}
-	if b.CursorRow < 0 {
-		b.CursorRow = 0
 	}
 	lineLen := len([]rune(b.CurrentLine()))
 	if b.CursorCol < 0 {
