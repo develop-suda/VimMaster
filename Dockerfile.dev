@@ -1,0 +1,17 @@
+# Development Dockerfile with hot reload support
+FROM golang:1.24-alpine
+
+WORKDIR /app
+
+# Install development tools
+RUN apk add --no-cache git
+
+# Copy go mod files first for caching
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copy source code
+COPY . .
+
+# Default command: run the application
+CMD ["go", "run", "main.go"]

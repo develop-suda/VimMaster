@@ -1,0 +1,34 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "name": "ステージ 1: 基本移動 (hjkl)",
+      "description": "hjklキーを使ってカーソルを右下の「X」まで移動してください。移動後、xキーで「X」を削除してください。",
+      "initial_text": ".....\n.....\n.....\n....X",
+      "expected_text": ".....\n.....\n.....\n....",
+      "hint": "'h' で左、'j' で下、'k' で上、'l' で右に移動します。'x' で文字を削除します。",
+      "min_strokes": 5,
+      "category": "基礎"
+    },
+    {
+      "id": 2,
+      "name": "ステージ 2: 行移動練習",
+      "description": "各行の末尾にある「X」をすべて削除してください。",
+      "initial_text": "Hello WorldX\nVim is greatX\nLearn Vim nowX",
+      "expected_text": "Hello World\nVim is great\nLearn Vim now",
+      "hint": "'$' で行末に移動、'j' で次の行に移動、'x' で文字を削除します。",
+      "min_strokes": 9,
+      "category": "基礎"
+    },
+    {
+      "id": 3,
+      "name": "ステージ 3: 行頭と行末 (0, $)",
+      "description": "各行の先頭にある「X」をすべて削除してください。",
+      "initial_text": "XHello World\nXVim Editor\nXTerminal Life",
+      "expected_text": "Hello World\nVim Editor\nTerminal Life",
+      "hint": "'0' で行頭に移動、'x' で文字を削除、'j' で次の行に移動します。",
+      "min_strokes": 7,
+      "category": "基礎"
+    }
+  ]
+}

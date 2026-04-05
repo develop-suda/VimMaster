@@ -1,0 +1,34 @@
+{
+  "stages": [
+    {
+      "id": 7,
+      "name": "ステージ 7: 単語の削除 (dw)",
+      "description": "文中の「不要な」という単語をすべて削除してください。",
+      "initial_text": "これは 不要な テキストです。\nVimを使えば 不要な 手間が省けます。",
+      "expected_text": "これは テキストです。\nVimを使えば 手間が省けます。",
+      "hint": "'w' で単語の先頭に移動し、'dw' で単語を削除できます。",
+      "min_strokes": 8,
+      "category": "単語操作"
+    },
+    {
+      "id": 8,
+      "name": "ステージ 8: 単語移動 (w, b, e)",
+      "description": "各行の最後の単語を削除してください。",
+      "initial_text": "Hello World DELETE\nVim Editor REMOVE\nTerminal Life ERASE",
+      "expected_text": "Hello World\nVim Editor\nTerminal Life",
+      "hint": "'$' で行末に移動、'b' で単語の先頭に戻り、'dw' で削除。または '$' の後 'dw' でも可。",
+      "min_strokes": 12,
+      "category": "単語操作"
+    },
+    {
+      "id": 9,
+      "name": "ステージ 9: 行末まで削除 (d$)",
+      "description": "各行のコメント部分（# 以降）を削除してください。",
+      "initial_text": "echo hello # これはコメント\nls -la # ファイル一覧\npwd # カレントディレクトリ",
+      "expected_text": "echo hello\nls -la\npwd",
+      "hint": "'f#' でコメントの '#' に移動、'd$' で行末まで削除。削除前に1文字戻って余分なスペースも削除しましょう。",
+      "min_strokes": 15,
+      "category": "単語操作"
+    }
+  ]
+}

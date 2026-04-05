@@ -1,0 +1,26 @@
+services:
+  # Development environment with hot reload
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - go-modules:/go/pkg/mod
+      - go-cache:/root/.cache/go-build
+    stdin_open: true
+    tty: true
+    working_dir: /app
+    command: go run main.go
+
+  # Production build
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+
+volumes:
+  go-modules:
+  go-cache:
